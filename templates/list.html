@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Codigo Blogs | Dashboard </title>
+	<link rel="preload stylesheet" href="/static/css/bg_list.css" as="style" type="text/css">
+</head>
+<body>
+    <!--  blog list -->
+  <h1>Welcome to blog library!</h1>
+  {% if status %}
+    <h2>Take a look around and find something to read.</h2>
+    {% for blog in data %}
+    <div class="blog-entry">
+        <div class="content-date"><div class="date">Published By:<br>{{blog.author|capfirst}}</div>
+        </div>
+        <div class="blog-content">
+          <div class="content-title"><h1>{{blog.title}}</h1></div>
+          <div class="content-tag">{{blog.blog_type| default:"Others"}}</div>
+          <span class="content-text">{{blog.content|slice:":300"}}...</span>
+            {% comment %} <div class="content-button">Read more</div> {% endcomment %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <!--  pagination -->
+    <div class="pagination">
+      <button  onclick="updateURLWithPageParam({{previous_page}})" id="prevPage" {% if previous_page == current_page %}disabled{% endif %}>prev</button>
+      <div class="showCount">
+        <p id="countPage">{{current_page}}</p>|<p>{{total_pages}}</p>
+      </div>
+      <button id="nextPage" onclick="updateURLWithPageParam({{next_page}})" {% if total_pages == current_page %}disabled{% endif %}>Next</button>
+    </div>
+  {% else %}
+    <h2>Sorry, There's no blog to read at a moment.</h2>
+  {% endif %}
+
+  <script>
+    function updateURLWithPageParam(pageNumber) {
+      currentUrl = new URL(window.location.href);
+      currentUrl.searchParams.set('page', pageNumber);
+      window.location.href = currentUrl.toString();
+  }
+  </script>
+  
+  </body>
+</html>

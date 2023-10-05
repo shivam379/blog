@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account | Login</title>
+	<link rel="preload stylesheet" href="/static/css/login.css" as="style" type="text/css">
+    <script src="/static/js/login.js"></script>
+
+</head>
+<body>
+    <div class="login-page">
+        <div class="form">
+            {% if error_message %}
+                <p class="error-msg">{{ error_message }}</p>
+            {% endif %}
+            <form class="login-form " method="post">
+                {% csrf_token %}
+                <h2>Log IN TO YOUR ACCOUNT</h2>
+                <input type="text" name="username" required placeholder="Username" id="user" autocomplete="off" />
+                <input name="password" oninput="return formvalid()" type="password" required placeholder="Password" id="pass" autocomplete="off" />
+                <span id="vaild-pass"></span>
+                <button type="submit">Login</button>
+                <p class="message"></p>
+            </form>
+        </div>
+    </div>
+
+    
+</body>
+</html>

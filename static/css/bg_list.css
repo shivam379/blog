@@ -1,0 +1,193 @@
+:root {
+    --background: #e39382;
+    --primary: #b27a43;
+    --secondary: #ff775b;
+    --darkgray: rgb(78, 78, 78);
+    
+    --fontBody: 'Open Sans', sans-serif;
+  }
+  body {
+    top: 10%;
+    padding-bottom: 4%;
+    left: 50%;
+    position: absolute;
+    display: block;
+    transform: translate(-50%);
+    box-sizing: border-box;
+    font-family: var(--fontBody);
+    background-color: var(--background);
+    background-image: url('data:image/svg+xml,%3Csvg width="52" height="26" viewBox="0 0 52 26" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z" /%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+  }
+  
+  .blog-entry {
+    margin-bottom: 50px;
+    width: 650px;
+    height: 255px;
+    background-color: white;
+    cursor: pointer;
+    padding-left: 150px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    border-top-right-radius:250px;
+    border-bottom-right-radius: 250px;
+  }
+  
+  .blog-img {
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    margin-top: 50px;
+    margin-left: -275px;
+    border-radius: 100%;
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    background-size: cover;
+  }
+  
+  .blog-entry:hover .content-date{
+    opacity: 0.75;
+  }
+  
+  .blog-entry .blog-content span {
+    display: block;
+    text-align: justify;
+    height: 90px;
+    width: 90%;
+  }
+  
+  .blog-entry:hover .content-title {
+    color: var(--primary);
+  }
+  
+  .content-date{
+    position: absolute;
+    width: 205px;
+    height: 200px;
+    margin-top: 30px;
+    left: -100px;
+    background: var(--darkgray);
+    opacity: 0;
+    border-radius: 100%;
+  }
+  
+  .date {
+    width: 140px;
+    color: white;
+    padding: 10px;
+    margin-top: 70px;
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    font-style: italic;
+    text-decoration: underline;
+  }
+  
+  .content-tag {
+    width: 100px;
+    background: var(--secondary);
+    color: white;
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 40px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .content-text {
+    margin-top: 20px;
+  }
+  .content-button {
+    width: 130px;
+    background:  var(--primary);
+    color: white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 40px;
+    border-style: none;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .content-button:hover {
+    background: var(--darkgray);
+    color: white;
+  }
+  
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.page {
+  list-style: none;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  background: #fff;
+  border-radius: 1rem;
+  line-height: 1.8rem;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.showCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  width: 85px;
+  background: white;
+  border-radius: 0.8rem;
+}
+.showCount p {
+  width: auto;
+}
+
+button {
+  padding: 1rem 1.4rem;
+  background-color: #fff;
+  color: black;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+  background: #fff;
+  border-radius: 1rem;
+  font-family: poppins;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.02) translateY(-5px);
+  box-shadow: 0 10px #000;
+}
+button:active {
+  transform: scale(1) translateY(0);
+  box-shadow: none;
+  transition: 0s;
+}
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: scale(1);
+}
+button:disabled:hover {
+  box-shadow: none;
+}
+.content-title h1{width:80%;}
